@@ -405,28 +405,14 @@ if ($null -ne $phone) {
             "Let's divide photos and videos into directories!"
 
             mkdir "Camera Roll" > $null
-            Move-Item "*IMG_*.JPG" "Camera Roll\"
-            # there can still be .HEIC images
-            Move-Item "*.HEIC" "Camera Roll\"
-            Move-Item "*IMG_E*.JPG" "Camera Roll\"
+            Move-Item "*IMG_*" "Camera Roll\"
 
             mkdir Screenshot > $null
             Move-Item "*IMG_*.PNG" "Screenshot\"
 
             mkdir "Received\" > $null
             Move-Item "*.JPG" "Received\"
-
-            mkdir "Videos\" > $null
-            Move-Item "*.MOV" "Videos\"
-            Move-Item "*.MP4" "Videos\"
-
-            mkdir "Other\" > $null
-            Move-Item "*.MOV" "Other\"
-            Move-Item "*.MP4" "Other\"
-            Move-Item "*.JPG" "Other\"
-            Move-Item "*.PNG" "Other\"
-            Move-Item "*.HEIC" "Other\"
-            Move-Item "*.JPEG" "Other\"
+            Move-Item "*.MP4" "Received\"
 
             Write-Host "Directories organization completed!" -ForegroundColor Green
 
